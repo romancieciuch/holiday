@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "Urlopnik — planer urlopu",
-  "short_name": "Urlopnik",
+  "name": "holiday — planer urlopu",
+  "short_name": "holiday",
   "description": "Prosty planer urlopu na cały rok.",
   "lang": "pl",
   "start_url": "/",

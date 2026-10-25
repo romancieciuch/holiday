@@ -1,4 +1,4 @@
-const CACHE_NAME = 'urlopnik-shell-v1'
+const CACHE_NAME = 'holiday-shell-v3'
 const APP_SHELL = ['/', '/index.html', '/manifest.webmanifest', '/pwa-icon.svg', '/favicon.svg', '/icons.svg']
 
 self.addEventListener('install', (event) => {
@@ -9,7 +9,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => Promise.all(
-      keys.filter((key) => key.startsWith('urlopnik-') && key !== CACHE_NAME)
+      keys.filter((key) => (key.startsWith('urlopnik-') || key.startsWith('holiday-')) && key !== CACHE_NAME)
         .map((key) => caches.delete(key)),
     )).then(() => self.clients.claim()),
   )

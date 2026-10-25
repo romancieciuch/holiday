@@ -97,7 +97,7 @@ function App() {
 
   function exportPlan() {
     const backup = {
-      app: 'urlopnik',
+      app: 'holiday',
       version: 1,
       exportedAt: new Date().toISOString(),
       data: { year, allowance, selected, holidays },
@@ -106,7 +106,7 @@ function App() {
     const url = URL.createObjectURL(file)
     const link = document.createElement('a')
     link.href = url
-    link.download = `urlopnik-${year}-backup.json`
+    link.download = `holiday-${year}-backup.json`
     link.click()
     URL.revokeObjectURL(url)
     setBackupStatus('Eksport gotowy — plik JSON został pobrany.')
@@ -123,7 +123,7 @@ function App() {
         const parsed = new Date(`${date}T12:00:00`)
         return !Number.isNaN(parsed.getTime()) && parsed.toISOString().slice(0, 10) === date
       }
-      if (backup.app !== 'urlopnik' || backup.version !== 1 || !data
+      if (!['urlopnik', 'holiday'].includes(backup.app) || backup.version !== 1 || !data
         || !Number.isInteger(data.year) || data.year < 1900 || data.year > 2200
         || !Number.isInteger(data.allowance) || data.allowance < 0 || data.allowance > 366
         || !Array.isArray(data.selected) || !data.selected.every(validDate)
@@ -136,7 +136,7 @@ function App() {
       setHolidays([...new Set(data.holidays)])
       setBackupStatus('Import gotowy — plan został wczytany.')
     } catch {
-      setBackupStatus('Nie udało się wczytać pliku. Wybierz kopię JSON z aplikacji Urlopnik.')
+        setBackupStatus('Nie udało się wczytać pliku. Wybierz kopię JSON z aplikacji holiday.')
     } finally {
       event.target.value = ''
     }
@@ -145,8 +145,8 @@ function App() {
   return (
     <main className="app-shell">
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Urlopnik — strona główna">
-          <span className="brand-mark">u.</span><span>urlopnik</span>
+        <a className="brand" href="#top" aria-label="holiday — strona główna">
+          <span className="brand-mark"><img src="/pwa-icon.svg" alt="" /></span><span>holiday</span>
         </a>
         <span className="local-note"><span className="save-dot" /> Zapisane na tym urządzeniu</span>
       </header>

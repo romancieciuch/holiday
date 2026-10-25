@@ -3,6 +3,7 @@
 .topbar { height: 76px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e6e9e3; }
 .brand { display: flex; align-items: center; gap: 9px; color: var(--ink); text-decoration: none; font-family: Manrope, sans-serif; font-size: 17px; font-weight: 800; letter-spacing: -.7px; }
 .brand-mark { width: 27px; height: 27px; border-radius: 9px; background: var(--blue); color: #fff; display: grid; place-items: center; font-size: 17px; letter-spacing: -1px; }
+.brand-mark img { display: block; width: 100%; height: 100%; border-radius: inherit; }
 .local-note { color: #8c9591; font-size: 11px; display: flex; align-items: center; gap: 7px; }
 .save-dot { width: 6px; height: 6px; background: var(--blue-mid); border-radius: 50%; }
 .intro { padding: 55px 0 32px; }
