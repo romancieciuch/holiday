@@ -93,31 +93,45 @@ h1 span { color: #6682cc; }
 .bottom-note { padding-top: 15px; border-top: 1px solid #e6e9e3; color: #adb5b0; font-size: 8px; letter-spacing: 1.2px; text-align: center; }
 .bottom-note span { margin-left: 4px; color: var(--blue-mid); }
 @media (max-width: 700px) {
-  .app-shell { padding: 0 18px 22px; }
+  .app-shell { padding: 0 16px 24px; }
   .topbar { height: 62px; }
-  .intro { padding: 39px 0 25px; }
-  h1 { letter-spacing: -1.8px; }
-  .planner-controls { padding: 16px; gap: 12px; flex-wrap: wrap; }
+  .local-note { font-size: 10px; }
+  .intro { padding: 34px 0 23px; }
+  h1 { font-size: clamp(34px, 9vw, 46px); letter-spacing: -1.8px; }
+  .intro-copy { max-width: 32ch; line-height: 1.6; }
+  .planner-controls { padding: 15px; gap: 10px; flex-wrap: wrap; }
   .field { flex: 1 1 100px; width: auto; }
   .field-label, .balance-label { font-size: 8px; letter-spacing: .8px; }
   .input-wrap input { font-size: 18px; }
   .control-divider { height: 30px; }
   .balance { flex: 1 1 100%; border-top: 1px solid #edf0eb; padding-top: 12px; margin: 2px 0 0; }
-  .summary-row { gap: 10px; flex-wrap: wrap; padding: 18px 1px 13px; }
-  .summary-actions { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e9ece7; padding-top: 9px; }
-  .backup-status { margin: 0 0 8px; text-align: left; }
-  .calendar-grid { gap: 9px; }
-  .month-card { padding: 12px 9px 13px; }
-  .month-heading { margin-bottom: 9px; }
-  .month-heading h2 { font-size: 11px; }
-  .day-empty, .day-button { width: 25px; height: 26px; }
-  .weekday-grid > span { font-size: 8px; }
-  .legend { gap: 10px; }
-  .legend p { flex-basis: 100%; margin: 3px 0 0; }
+  .summary-row { gap: 9px 12px; flex-wrap: wrap; padding: 17px 1px 13px; }
+  .summary-row > div:first-child, .summary-row > div:nth-of-type(2) { gap: 5px; }
+  .summary-text { font-size: 10px; }
+  .summary-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 6px 14px; border-top: 1px solid #e9ece7; padding-top: 9px; }
+  .mode-button, .reset-button { min-height: 36px; }
+  .backup-button { min-height: 36px; padding: 7px 11px; }
+  .action-divider { display: none; }
+  .backup-status { margin: 0 0 8px; text-align: left; line-height: 1.5; }
+  .calendar-grid { grid-template-columns: minmax(0, 1fr); gap: 11px; }
+  .month-card { padding: 15px 14px 16px; }
+  .month-heading { margin-bottom: 11px; }
+  .month-heading h2 { font-size: 14px; }
+  .month-heading > span { font-size: 10px; }
+  .weekday-grid, .days-grid { justify-items: stretch; }
+  .weekday-grid > span { height: 28px; font-size: 10px; }
+  .day-empty, .day-button { width: 100%; height: 38px; margin: 1px 0; }
+  .day-button { border-radius: 9px; font-size: 12px; }
+  .holiday-dot { width: 4px; height: 4px; bottom: 5px; }
+  .legend { gap: 10px 14px; padding-top: 15px; }
+  .legend p { flex-basis: 100%; margin: 3px 0 0; line-height: 1.5; }
+  .copy-section { padding: 15px 14px 13px; margin-bottom: 18px; }
+  .copy-section textarea { min-height: 82px; }
 }
 @media (max-width: 390px) {
   .app-shell { padding-inline: 12px; }
-  .calendar-grid { gap: 6px; }
-  .month-card { padding-inline: 5px; }
-  .day-empty, .day-button { width: 23px; height: 25px; }
+  .month-card { padding-inline: 11px; }
+  .summary-actions { gap: 4px 10px; }
+  .copy-heading h2 { font-size: 13px; }
+  .copy-button { padding-inline: 9px; }
 }
