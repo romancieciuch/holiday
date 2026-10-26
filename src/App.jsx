@@ -153,7 +153,7 @@ function App() {
 
       <section className="intro" id="top">
         <div className="eyebrow"><span className="eyebrow-line" /> TWÓJ ROK, TWOJE ZASADY</div>
-        <h1>Zaplanuj urlop.<br /><span>Wykorzystaj rok.</span></h1>
+        <h1>Zaplanuj urlop. <span>Wykorzystaj rok.</span></h1>
         <p className="intro-copy">Zaznacz dni, które chcesz mieć dla siebie. Resztę policzymy za Ciebie.</p>
       </section>
 
